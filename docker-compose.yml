@@ -1,0 +1,15 @@
+# docker-compose.yml
+
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:5.0 # -> mongo image version
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root # Mongo needs these env vars to create the db image
+      MONGO_INITDB_ROOT_PASSWORD: root # Mongo needs these env vars to create the db image
+    ports:
+      - 27017:27017 # Mongo default port
+    volumes:
+      # Data persistence for mongo
+      - "./mongo_data:/data/db" # "[location where the mongo data will be saved]:/data/db"
