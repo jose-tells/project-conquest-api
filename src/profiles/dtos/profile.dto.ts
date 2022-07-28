@@ -1,4 +1,5 @@
-import { PartialType } from '@nestjs/mapped-types';
+import { PartialType, ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 import {
   IsArray,
   IsNotEmpty,
@@ -11,33 +12,40 @@ import {
 export class CreateProfileDto {
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   readonly author: string;
 
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   readonly caption: string;
 
-  @IsObject()
+  @IsString()
   @IsNotEmpty()
-  readonly dimensions: {
-    height: number;
-    width: number;
-  };
+  @ApiProperty()
+  readonly orientation: string;
 
   @IsUrl()
   @IsNotEmpty()
+  @ApiProperty()
   readonly fileUrl: string;
 
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   readonly filename: string;
 
   @IsArray()
   @IsNotEmpty()
+  @Type(() => String)
+  @ApiProperty()
   readonly specialty: string[];
 
-  @IsObject()
+  @IsObject({
+    each: true,
+  })
   @IsNotEmpty()
+  @ApiProperty()
   readonly socials: {
     instagram: string;
     twitter: string;
@@ -46,10 +54,12 @@ export class CreateProfileDto {
 
   @Min(0)
   @IsNotEmpty()
+  @ApiProperty()
   readonly position: number;
 
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   readonly name: string;
 }
 

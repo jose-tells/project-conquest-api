@@ -39,3 +39,6 @@ lerna-debug.log*
 
 # Mongo
 mongo_data
+
+#Firebase
+firebase/admin-key.json
