@@ -32,7 +32,6 @@ import config from '../utils/config';
 
         const client = new MongoClient(mongoUri);
         await client.connect();
-        console.log('Successfully connected to the server');
         const db = client.db(dbName);
         return db;
       },

@@ -1,10 +1,10 @@
 {
   "name": "project-conquest-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "API for Project Conquest",
+  "author": "Jose Marquinez",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -79,5 +79,8 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
