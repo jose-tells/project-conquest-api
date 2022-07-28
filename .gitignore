@@ -33,3 +33,13 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# ENV
+*.env
+
+# Mongo
+mongo_data
+
+#Firebase
+firebase/admin-key.json
+>>>>>>> dev
